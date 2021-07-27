@@ -3,6 +3,8 @@
 @import url(https://fonts.google.com/specimen/Inter);
 @import url(https://fonts.google.com/specimen/Lexend+Deca);
 
+
+
 /*Document Setup*/
 
 * {
@@ -19,12 +21,23 @@ html {
     background-color: hsl(233, 47%, 7%);
 }
 
+body {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #card {
     background-color: hsl(244, 38%, 16%);
-    width: auto;
+    width: 345px;
     height: 100%;
     margin: 4rem 1rem;
     border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 /*5 text classes*/
@@ -62,33 +75,49 @@ html {
 /*Image formatting*/
 
 #img-header {
-    height: inherit;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     height: 240px;
     background-image: linear-gradient(to right, #AA5CDB, #AA5CDB), url(./images/image-header-mobile.jpg);
-    background-size: contain;
-    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
     width: auto;
 }
 
+
+
 /*Stats formatting*/
-#content {
+
+#txt-content {
     padding: 1.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 0.5rem;
 }
 
 .stats-box {
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
+
+.stats-box div {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+
 
 /*FEM Attribution*/
 
@@ -100,4 +129,54 @@ html {
 
 .attribution a {
     color: hsla(228, 45%, 88%, 0.8); 
+    }    
+
+/*Responsive*/
+
+@media (min-width: 376px) {
+    #card {
+        width: 1024px;
+        height: 50vh;
+        margin: auto;
+        flex-direction: row;
+        align-self: center;
     }
+
+    #img-header {
+        height: 100%;
+        width: 100%;
+        order: 2;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0.5rem;
+    }
+    #txt-content {
+        padding: 4rem 8rem 4rem 4rem;
+        justify-content: space-between;
+    }
+    
+    .stats-box {
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 4rem;
+        flex-direction: row;
+    }
+    .txt-teaser, .txt-desc {
+        text-align: left;
+    }
+    .stats-box div {
+        align-items: flex-start;
+    }
+    .txt-key {
+        padding-bottom: 0;
+        font-size: 0.8rem;
+    }
+    .txt-desc {
+        font-size: 1.2rem;
+    }
+    .txt-teaser {
+        font-size: 2.4rem;
+    }
+    .txt-stats {
+        font-size: 1.8em;
+    }
+}
