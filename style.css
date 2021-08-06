@@ -1,7 +1,7 @@
 /*Import*/
 
-@import url(https://fonts.google.com/specimen/Inter);
-@import url(https://fonts.google.com/specimen/Lexend+Deca);
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 
 
@@ -19,11 +19,13 @@ html {
     font-weight: 400;
     color: #FFF;
     background-color: hsl(233, 47%, 7%);
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    height: 100vh;
-    width: auto;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,9 +34,9 @@ body {
 
 #card {
     background-color: hsl(244, 38%, 16%);
-    width: 345px;
-    height: 100%;
-    margin: 4rem 1rem;
+    width: 376px;
+    height: auto;
+    margin: 2rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -70,6 +72,7 @@ body {
     font-size: 0.75rem;
     letter-spacing: 1px;
     padding-bottom: 1.5rem;
+    text-align: center;
 }
 
 /*Image formatting*/
@@ -77,7 +80,7 @@ body {
 #img-header {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    height: 240px;
+    min-height: 240px;
     background-image: linear-gradient(to right, #AA5CDB, #AA5CDB), url(./images/image-header-mobile.jpg);
     background-size: cover;
     background-position: center;
@@ -113,37 +116,35 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     
 }
 
 
 
-/*FEM Attribution*/
-
-.attribution { 
-    font-size: 11px; text-align: center; 
-    color: hsla(0, 0%, 100%, 0.6);
-    margin-bottom: 1rem;
-}
-
-.attribution a {
-    color: hsla(228, 45%, 88%, 0.8); 
-    }    
-
 /*Responsive*/
 
-@media (min-width: 376px) {
-    #card {
-        width: 1024px;
-        height: 50vh;
-        margin: auto;
-        flex-direction: row;
-        align-self: center;
+@media (min-width: 768px) {
+
+    body {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
+    #card {
+        width: 100%;
+        max-width: 1024px;
+        height: auto;
+        margin: auto 2rem;
+        flex-direction: row;
+        flex-shrink: 1;
+        align-self: center;
+    }
+    
     #img-header {
-        height: 100%;
+        height: auto;
         width: 100%;
         order: 2;
         border-top-left-radius: 0;
@@ -180,3 +181,17 @@ body {
         font-size: 1.8em;
     }
 }
+
+
+
+/*FEM Attribution*/
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    color: hsla(0, 0%, 100%, 0.6);
+    margin-bottom: 1rem;
+}
+
+.attribution a {
+    color: hsla(228, 45%, 88%, 0.8); 
+    }    
